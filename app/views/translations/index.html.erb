@@ -1,0 +1,22 @@
+<h1>Listing translations</h1>
+
+<table>
+  <tr>
+    <th>Word a</th>
+    <th>Word b</th>
+  </tr>
+
+<% @translations.each do |translation| %>
+  <tr>
+    <td><%=h translation.word_a.main_script %>; <%=h translation.word_a.romanization %></td>
+    <td><%=h translation.word_b.main_script %>; <%=h translation.word_b.romanization %></td>
+    <td><%= link_to 'Show', translation %></td>
+    <td><%= link_to 'Edit', edit_translation_path(translation) %></td>
+    <td><%= link_to 'Destroy', translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New translation', new_translation_path %>

@@ -1,0 +1,25 @@
+<h1>New Chinese word and English translation</h1>
+
+<%= error_messages_for :ch_word %>
+<%= error_messages_for :en_word %>
+<%= error_messages_for :translation %>
+
+<% form_tag :action => 'create_en_ch' do %>
+  <p>
+    <%= label :ch_word, :main_script, "Chinese Character" %><br />
+    <%= text_field :ch_word, :main_script %>
+  </p>
+  <p>
+    <%= label :ch_word, :secondary_script, "Pinyin" %><br />
+    <%= text_field :ch_word, :secondary_script %>
+  </p>
+  <p>
+    <%= label :en_word, :main_script, "English" %><br />
+    <%= text_field :en_word, :main_script  %>
+  </p>
+  <p>
+    <%= submit_tag 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', words_path %>

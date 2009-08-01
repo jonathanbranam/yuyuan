@@ -1,0 +1,23 @@
+<p>
+  <b>Language:</b>
+  <%=h @word.language %>
+</p>
+
+<p>
+  <b>Main script:</b>
+  <%=h @word.main_script %>
+</p>
+
+<p>
+  <b>Secondary script:</b>
+  <%=h @word.secondary_script %>
+</p>
+
+<p>
+  <b>Romanization:</b>
+  <%=h @word.romanization %>
+</p>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>

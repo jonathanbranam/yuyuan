@@ -1,0 +1,28 @@
+<h1>Editing word</h1>
+
+<% form_for(@word) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+  </p>
+  <p>
+    <%= f.label :main_script %><br />
+    <%= f.text_field :main_script %>
+  </p>
+  <p>
+    <%= f.label :secondary_script %><br />
+    <%= f.text_field :secondary_script %>
+  </p>
+  <p>
+    <%= f.label :romanization %><br />
+    <%= f.text_field :romanization %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @word %> |
+<%= link_to 'Back', words_path %>

@@ -1,4 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :chinese_words
+
+
+  map.resources :translations
+  map.resources :words
+  map.connect 'new_en_ch', :controller => 'words', :action => 'new_en_ch'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,0 +1,15 @@
+<p>
+  <b>Word a:</b>
+  <%=h @translation.word_a.main_script %>
+  <%=h @translation.word_a.romanization %>
+</p>
+
+<p>
+  <b>Word b:</b>
+  <%=h @translation.word_b.main_script %>
+  <%=h @translation.word_b.romanization %>
+</p>
+
+
+<%= link_to 'Edit', edit_translation_path(@translation) %> |
+<%= link_to 'Back', translations_path %>

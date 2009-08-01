@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  traditional: MyString
+  simplified: MyString
+  pinyin: MyString
+  english1: MyString
+  english2: MyString
+  english3: MyString
+  english4: MyString
+  english5: MyString
+  english6: MyString
+  english7: MyString
+  english8: MyString
+  english9: MyString
+
+two:
+  traditional: MyString
+  simplified: MyString
+  pinyin: MyString
+  english1: MyString
+  english2: MyString
+  english3: MyString
+  english4: MyString
+  english5: MyString
+  english6: MyString
+  english7: MyString
+  english8: MyString
+  english9: MyString
