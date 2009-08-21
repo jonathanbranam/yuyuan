@@ -1,11 +1,11 @@
 <p>
   <b>Traditional:</b>
-  <%=h @chinese_word.traditional %>
+  <span class="ch_huge"><%=h @chinese_word.traditional %></span>
 </p>
 
 <p>
   <b>Simplified:</b>
-  <%=h @chinese_word.simplified %>
+  <span class="ch_huge"><%=h @chinese_word.simplified %></span>
 </p>
 
 <p>
@@ -13,51 +13,12 @@
   <%=h @chinese_word.pinyin %>
 </p>
 
+<% @chinese_word.english_definition.each do |edef| %>
 <p>
-  <b>English1:</b>
-  <%=h @chinese_word.english1 %>
+  <b>English:</b>
+  <%=h edef.definition %>
 </p>
-
-<p>
-  <b>English2:</b>
-  <%=h @chinese_word.english2 %>
-</p>
-
-<p>
-  <b>English3:</b>
-  <%=h @chinese_word.english3 %>
-</p>
-
-<p>
-  <b>English4:</b>
-  <%=h @chinese_word.english4 %>
-</p>
-
-<p>
-  <b>English5:</b>
-  <%=h @chinese_word.english5 %>
-</p>
-
-<p>
-  <b>English6:</b>
-  <%=h @chinese_word.english6 %>
-</p>
-
-<p>
-  <b>English7:</b>
-  <%=h @chinese_word.english7 %>
-</p>
-
-<p>
-  <b>English8:</b>
-  <%=h @chinese_word.english8 %>
-</p>
-
-<p>
-  <b>English9:</b>
-  <%=h @chinese_word.english9 %>
-</p>
-
+<% end %>
 
 <%= link_to 'Edit', edit_chinese_word_path(@chinese_word) %> |
 <%= link_to 'Back', chinese_words_path %>

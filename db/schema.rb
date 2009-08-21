@@ -9,21 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090801233005) do
+ActiveRecord::Schema.define(:version => 20090818022210) do
 
   create_table "chinese_words", :force => true do |t|
     t.string   "traditional"
     t.string   "simplified"
     t.string   "pinyin"
-    t.string   "english1"
-    t.string   "english2"
-    t.string   "english3"
-    t.string   "english4"
-    t.string   "english5"
-    t.string   "english6"
-    t.string   "english7"
-    t.string   "english8"
-    t.string   "english9"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "english_definitions", :force => true do |t|
+    t.string   "definition"
+    t.integer  "chinese_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

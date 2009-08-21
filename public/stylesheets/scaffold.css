@@ -3,7 +3,7 @@ body { background-color: #fff; color: #333; }
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
-  line-height: 18px;
+  /*line-height: 18px;*/
 }
 
 pre {
@@ -52,3 +52,15 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+.ch_medium {
+    font-size: 24px;
+}
+.ch_big {
+    font-size: 32px;
+}
+.ch_huge {
+    font-size: 48px;
+}
+.ch_gigantic {
+    font-size: 64px;
+}

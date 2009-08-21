@@ -2,7 +2,7 @@ class ChineseWordsController < ApplicationController
   # GET /chinese_words
   # GET /chinese_words.xml
   def index
-    @chinese_words = ChineseWord.all
+    @chinese_words = ChineseWord.all :limit => 30
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,6 +35,23 @@ class ChineseWordsController < ApplicationController
   # GET /chinese_words/1/edit
   def edit
     @chinese_word = ChineseWord.find(params[:id])
+  end
+
+  def search_form
+    if params[:q]
+      redirect_to "/search/#{URI.escape(params[:q])}"
+    end
+  end
+
+  def search
+    search_string = "%#{params[:value]}%"
+    @definitions = EnglishDefinition.find(:all, :conditions =>["definition LIKE ?", search_string])
+    @chinese_words = []
+    @chinese_words.concat @definitions.map { |defn|
+      defn.chinese
+    }
+    @chinese_matches = ChineseWord.find(:all, :conditions =>["simplified LIKE ? OR traditional LIKE ? OR pinyin LIKE ?", search_string, search_string, search_string])
+    @chinese_words.concat @chinese_matches
   end
 
   # POST /chinese_words
