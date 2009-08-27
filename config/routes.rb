@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :words
   map.connect 'new_en_ch', :controller => 'words', :action => 'new_en_ch'
 
-  map.connect 'search', :controller => 'chinese_words', :action => 'search_form'
+  map.search_form 'search', :controller => 'chinese_words', :action => 'search_form'
   map.connect 'search/:value', :controller => 'chinese_words', :action => 'search'
 
 

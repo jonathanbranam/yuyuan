@@ -1,5 +1,11 @@
 <h1>Search Dictionary</h1>
 
+<style>
+input {
+  font-size: 32px;
+} 
+</style> 
+
 <% form_tag do %>
   <p>
     <%= label_tag :q, "Search for" %><br />
@@ -10,4 +16,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', chinese_words_path %>
+<%= link_to 'Back', root_path %>
