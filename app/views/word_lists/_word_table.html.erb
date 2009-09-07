@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Traditional</th>
+    <th>Simplified</th>
+    <th>Pinyin</th>
+    <th>First Definition</th>
+  </tr>
+
+<% word_list.word_list_item.each do |item| %>
+  <tr>
+    <td class="ch_big"><%=h item.chinese_word.traditional %></td>
+    <td class="ch_big"><%=h item.chinese_word.simplified %></td>
+    <td><%=h item.chinese_word.pinyin %></td>
+    <td><%=h item.chinese_word.english_definition.first.definition %></td>
+    <td><%= link_to 'Remove from List', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show Word', item.chinese_word %></td>
+    <td><%= link_to 'Edit Word', edit_chinese_word_path(item.chinese_word) %></td>
+  </tr>
+<% end %>
+</table>

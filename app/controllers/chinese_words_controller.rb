@@ -3,6 +3,7 @@ class ChineseWordsController < ApplicationController
   # GET /chinese_words.xml
   def index
     @chinese_words = ChineseWord.all :limit => 30
+    @word_lists = WordList.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -52,6 +53,9 @@ class ChineseWordsController < ApplicationController
     }
     @chinese_matches = ChineseWord.find(:all, :conditions =>["simplified LIKE ? OR traditional LIKE ? OR pinyin LIKE ?", search_string, search_string, search_string])
     @chinese_words.concat @chinese_matches
+
+    # for adding to word lists
+    @word_lists = WordList.all
   end
 
   # POST /chinese_words

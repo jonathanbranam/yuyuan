@@ -1,0 +1,22 @@
+<h1>List of Word Lists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Words in List</th>
+  </tr>
+
+<% @word_lists.each do |word_list| %>
+  <tr>
+    <td><%=h word_list.name %></td>
+    <td><%=h word_list.word_list_item.count %></td>
+    <td><%= link_to 'Show', word_list %></td>
+    <td><%= link_to 'Edit', edit_word_list_path(word_list) %></td>
+    <td><%= link_to 'Destroy', word_list, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Word List', new_word_list_path %>

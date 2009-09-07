@@ -4,6 +4,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :translations
   map.resources :words
+  map.resources :word_lists do 
+    map.resources :word_list_items
+  end
   map.connect 'new_en_ch', :controller => 'words', :action => 'new_en_ch'
 
   map.search_form 'search', :controller => 'chinese_words', :action => 'search_form'

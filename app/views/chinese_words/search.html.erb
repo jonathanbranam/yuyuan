@@ -1,25 +1,6 @@
 <h1>Search results:</h1>
 
-<table>
-  <tr>
-    <th>Traditional</th>
-    <th>Simplified</th>
-    <th>Pinyin</th>
-    <th>First Definition</th>
-  </tr>
-
-<% @chinese_words.each do |chinese_word| %>
-  <tr>
-    <td class="ch_big"><%=h chinese_word.traditional %></td>
-    <td class="ch_big"><%=h chinese_word.simplified %></td>
-    <td><%=h chinese_word.pinyin %></td>
-    <td><%=h chinese_word.english_definition.first.definition %></td>
-    <td><%= link_to 'Show', chinese_word %></td>
-    <td><%= link_to 'Edit', edit_chinese_word_path(chinese_word) %></td>
-    <td><%= link_to 'Destroy', chinese_word, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => "chinese_words/word_table", :locals =>{:chinese_words => @chinese_words, :word_lists => @word_lists} %>
 
 <br />
 

@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>Traditional</th>
+    <th>Simplified</th>
+    <th>Pinyin</th>
+    <th>First Definition</th>
+  </tr>
+
+<% chinese_words.each do |chinese_word| %>
+  <tr>
+    <td class="ch_big"><%=h chinese_word.traditional %></td>
+    <td class="ch_big"><%=h chinese_word.simplified %></td>
+    <td><%=h chinese_word.pinyin %></td>
+    <td><%=h chinese_word.english_definition.first.definition %></td>
+    <% if defined? word_lists %>
+    <td>
+      <% form_tag :action => 'add_word_to_list', :controller => 'word_lists' do %>
+        <%= select_tag(:word_list_id, word_lists.map do |word_list|
+	  "<option label='#{word_list.name}' value='#{word_list.id}'/>"
+	end.join) %>
+	<%= text_field_tag :word_id, chinese_word.id, :visible=>false, :hidden=>true %>
+	<%= submit_tag 'Add to list' %>
+      <% end %>
+    </td>
+    <% end %>
+    <td><%= link_to 'Show', chinese_word %></td>
+    <td><%= link_to 'Edit', edit_chinese_word_path(chinese_word) %></td>
+    <td><%= link_to 'Destroy', chinese_word, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

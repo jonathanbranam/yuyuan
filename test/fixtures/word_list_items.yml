@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  chinese_word_id: 1
+  word_list_id: 1
+
+two:
+  chinese_word_id: 1
+  word_list_id: 1

@@ -1,15 +1,15 @@
 <h1>Search Dictionary</h1>
 
-<style>
+<!-- style>
 input {
   font-size: 32px;
 } 
-</style> 
+</style --> 
 
 <% form_tag do %>
   <p>
     <%= label_tag :q, "Search for" %><br />
-    <%= text_field_tag :q %>
+    <%= text_field_tag :q, "", {:class=>'ch_big'} %>
   </p>
   <p>
     <%= submit_tag 'Search' %>

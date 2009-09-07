@@ -1,0 +1,11 @@
+<h1>Word List</h1>
+
+<p>
+  <b>Name:</b>
+  <%=h @word_list.name %>
+</p>
+<%= render :partial => "word_table", :locals =>{:word_list => @word_list} %>
+
+<br />
+
+<%= link_to 'Back to Word Lists', word_lists_path %>
