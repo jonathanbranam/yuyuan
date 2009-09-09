@@ -15,11 +15,11 @@
     <% if defined? word_lists %>
     <td>
       <% form_tag :action => 'add_word_to_list', :controller => 'word_lists' do %>
+	<%= submit_tag 'Add to list' %>
         <%= select_tag(:word_list_id, word_lists.map do |word_list|
 	  "<option label='#{word_list.name}' value='#{word_list.id}'/>"
 	end.join) %>
-	<%= text_field_tag :word_id, chinese_word.id, :visible=>false, :hidden=>true %>
-	<%= submit_tag 'Add to list' %>
+	<%= hidden_field_tag :word_id, chinese_word.id %>
       <% end %>
     </td>
     <% end %>

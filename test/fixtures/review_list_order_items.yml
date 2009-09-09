@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  review_list_order_id: 1
+  word_list_item_id: 1
+  position: 1
+
+two:
+  review_list_order_id: 1
+  word_list_item_id: 1
+  position: 1

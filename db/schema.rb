@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090828001850) do
+ActiveRecord::Schema.define(:version => 20090907150730) do
 
   create_table "chinese_words", :force => true do |t|
     t.string   "traditional"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(:version => 20090828001850) do
   create_table "english_definitions", :force => true do |t|
     t.string   "definition"
     t.integer  "chinese_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "review_list_order_items", :force => true do |t|
+    t.integer  "review_list_order_id"
+    t.integer  "word_list_item_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "review_list_orders", :force => true do |t|
+    t.integer  "word_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
